@@ -1,4 +1,5 @@
 export const followCharacter = async ({ id }) => {
+  console.log("follow", id);
   const response = await fetch("/api/follow", {
     method: "POST",
     headers: {
@@ -6,6 +7,6 @@ export const followCharacter = async ({ id }) => {
     },
     body: JSON.stringify({ data: id }),
   });
-
+  
   await response.json();
 };

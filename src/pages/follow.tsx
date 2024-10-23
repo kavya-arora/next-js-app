@@ -6,15 +6,16 @@ import React from 'react'
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    const data = await getFollowedCharacters();
-    return { props: { data } };
-  };
+  const data = await getFollowedCharacters();
   
+  return { props: { data } };
+};
 
 
-const Follow = ({data}) => {
+const Follow = ({ data }) => {
+  console.log(data);
   return (
-    data.length==0? <EmptyPlaceholder/> :  <CharacterList characters={data}/>
+    data.length == 0 ? <EmptyPlaceholder /> : <CharacterList characters={data} />
   )
 }
 

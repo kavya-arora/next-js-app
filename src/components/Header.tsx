@@ -7,10 +7,10 @@ const Header = ({children}) => {
     
   return (
     <>
-      <ul className='border-y m-2 gap-4'>
+      <ul className='border-y m-2 gap-4 flex'>
         <Link href={{pathname:"/"}} className={`${router.pathname=="/"? "border-b": ""}`}>Home</Link>
-        <Link href={{pathname:"/"}} className={`${router.pathname=="/follow"? "border-b": ""}`}>Following</Link>
-        <Link href={{pathname:"/"}} className={`${router.pathname=="/contact-us"? "border-b": ""}`}>Contact Us</Link>
+        <Link href={{pathname:"/follow"}} className={`${router.pathname=="/follow"? "border-b": ""}`}>Following</Link>
+        <Link href={{pathname:"/contact-us"}} className={`${router.pathname=="/contact-us"? "border-b": ""}`}>Contact Us</Link>
       </ul>
       {children}
     </>

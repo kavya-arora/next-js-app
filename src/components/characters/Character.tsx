@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const _NOOP = () => {};
 
-export const Character = ({ character, onFollow = _NOOP }) => {
+export const Character = ({ character, onFollow = _NOOP, isFollowed}) => {
     const { image, name, status, location, gender, species, type, origin } =
     character;
 
@@ -40,7 +40,7 @@ export const Character = ({ character, onFollow = _NOOP }) => {
             </div>
             <span>
               <button onClick={onFollow} className="flex px-1 follow-btn">
-                Follow
+                {isFollowed? "Unfollow" : "Follow"}
               </button>
             </span>
           </div>
