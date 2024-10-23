@@ -7,6 +7,5 @@ export const followCharacter = async ({ id }) => {
     },
     body: JSON.stringify({ data: id }),
   });
-  
   await response.json();
 };

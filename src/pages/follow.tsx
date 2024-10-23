@@ -7,7 +7,7 @@ import React from 'react'
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const data = await getFollowedCharacters();
-  
+  console.log("data", data);
   return { props: { data } };
 };
 
