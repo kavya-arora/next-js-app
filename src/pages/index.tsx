@@ -1,21 +1,17 @@
 import CharacterList from '@/components/characters/CharacterList'
 import { getCharacters } from '@/queries/characters';
-import { GetServerSideProps } from 'next';
+import { CharacterDataType } from '@/types/types';
 import React from 'react'
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const data = await getCharacters();
-  return { props: { data } };
+export const getStaticProps = async () => {
+  const { characters: { results: characterData } } = await getCharacters();
+  return { props: { characterData } };
 };
 
-const Index = ({data}) => {
-console.log(data.characters.results);
+const Index = ({ characterData }: { characterData: characterData[] }) => {
   return (
-    <div>
-      {/* meow */}
-      <CharacterList characters={data.characters.results}/>
-    </div>
+    <CharacterList characters={characterData} />
   )
 }
 
-export default Index
+export default Index;
