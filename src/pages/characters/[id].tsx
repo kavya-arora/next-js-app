@@ -1,6 +1,7 @@
 import { Character } from '@/components/characters/Character'
 import { followCharacter } from '@/mutations/follow';
 import { getCharacterById } from '@/queries/characterById';
+import { getFollowedCharacters } from '@/queries/followedCharacters';
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
@@ -11,6 +12,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.params;
   const data = await getCharacterById({ id });
   const character = data.character;
+  const followedCharacters = await getFollowedCharacters();
+  followedCharacters.forEach(character=>{
+    if(character.id === id) initiallyFollowed=true;
+  });
   return { props: { character, initiallyFollowed } };
 };
 
