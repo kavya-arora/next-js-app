@@ -27,8 +27,6 @@ export const getFollowedCharacters = async () => {
     );
     
     const { storedData: followedCharacters } = await response.json();
-    console.log("getfollowed");
-    console.log(followedCharacters);
     
     let result = [];
     

@@ -7,7 +7,6 @@ import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 
-
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let initiallyFollowed = false;
 

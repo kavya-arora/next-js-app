@@ -12,8 +12,6 @@ export default function handler(req, res) {
     return res.status(201).json({ message: 'Data stored successfully', storedData: data });
   } else if (req.method === 'GET') {
     // Handle GET request to retrieve all stored data
-    console.log("get");
-    console.log(tempStorage);
     return res.status(200).json({ storedData: tempStorage });
   } else if (req.method === 'DELETE') {
     // Handle DELETE request to clear the storage
