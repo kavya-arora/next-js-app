@@ -8,7 +8,7 @@ export const getStaticProps = async () => {
   return { props: { characterData } };
 };
 
-const Index = ({ characterData }: { characterData: characterData[] }) => {
+const Index = ({ characterData }: { characterData: CharacterDataType[] }) => {
   return (
     <CharacterList characters={characterData} />
   )

@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     domains: ['rickandmortyapi.com'],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/home",
+        destination: "/",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
